@@ -1,0 +1,157 @@
+body {
+    margin: 1px 1px 1px 15px;
+    padding: 1px;
+    font-family: Tahoma;
+    text-align: left;
+  
+}
+.nav-container {
+    background:#f6f6f6;
+    font-family: Tahoma;
+    font-size: 12px;
+    height: 32px;
+    text-transform: uppercase;
+}
+
+.flash-container {
+    background-color: #ffeeba;
+    height: 40px;
+    font-style: italic;
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+}
+
+a:hover {
+	color:#2387D9;
+}
+
+.button {
+    width : 65px;
+    padding : 3px;    
+    font-size: 16px;
+    margin : 5px;
+    padding : 5px;
+    border: 1px solid lightgray;
+}
+.button:hover {
+    background-color: 157dd3;
+    color: white;
+    cursor:pointer;
+}
+
+.posttable { 
+    width : 100%;
+    margin: 0px;
+}
+
+.posttitle {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.postmessage {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.posttimestamp {
+    font-style: italic;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.likecount {
+    text-align: center;
+    font-weight: bold;
+}
+
+.useritem{
+    text-align: center;
+    padding: 3px;
+    margin: 4px 3px 4px 3px;
+    color: crimson; 
+    text-transform: uppercase;
+}
+
+.likebtn {
+    margin: 0 auto;
+    height: 40px;
+    width: 50px;
+    border: 0px;
+    vertical-align: middle;
+    background-image: url("..//img//like.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+} 
+.likebtn:hover {
+    background-image: url("..//img//like_hover.png");
+    cursor:pointer;
+}
+
+.formtitle {
+    width: 80%;
+    font-size: 16px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.formbody {
+    width: 80%;
+    height: 150px;
+    font-size: 16px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.formselect {
+    width: 80%;
+    font-size: 16px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.postlist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.post-box {
+    display: flex;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    width: 36%;
+    margin: 2px;
+    border: 1px solid #dddddd; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* Media query for screens larger than 1200px */
+@media screen and (min-width: 1201px) {
+    .post-box {
+        width: 32%;
+    }
+}
+
+/* Media query for screens between 800px and 1200px */
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+    .post-box {
+        width: 48%;
+    }
+}
+
+/* Media query for screens less than 800px */
+@media screen and (max-width: 800px) {
+    .post-box {
+        width: 99%;
+    }
+}

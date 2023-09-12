@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Post New Smile</h1>
+
+    {% if form %}
+
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div>
+                <!--Displays the form item for the post's `title`.--> 
+                {{ form.title.label }}<br>
+                {{ form.title(class="formtitle") }}<br>
+                <!-- TODO: (milestone 1) Display the error messages of the `title` field validator (if there are any validation errors).   -->  
+                {% if form.title.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.title.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <!-- TODO: (milestone1) Include the form item for the post's `body`. Apply appropriate styling for the `body`form  item.  -->  
+                {{ form.body.label }}<br>
+                {{ form.body(class="formbody") }}<br>
+
+                <!-- TODO: (milestone 1) Display the error messages of the `body` field validator (if there are any validation errors).   --> 
+                {% if form.body.errors %}
+                <ul class="errorlist">
+                    {% for error in form.body.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            
+            <!-- TODO: (milestone1) Include the form item for `happiness_level` selection. Apply appropriate styling for the `happiness_level` form item.  -->  
+            <div>
+                {{ form.happiness_level.label }}<br>
+                {{ form.happiness_level(class="formselect") }}<br>
+            </div>
+            <!-- TODO: (milestone2) Include the form item for `tag` selection.   -->  
+            <div>
+                {{ form.tag.label }}<br>
+                {{ form.tag(class="formtag") }}<br>
+            </div>
+
+            {{ form.submit(class="button") }}
+        </form>
+    {% endif %}
+
+
+  {% endblock %}
