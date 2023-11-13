@@ -4,5 +4,51 @@
     <h1>Register</h1>
 
     <!-- TODO: (milestone 3) Include the template for "user registration" form here..  -->
-    
+    <form method="POST" action="{{ url_for('auth.register') }}">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.username.label(class="form-label") }}
+            <br>
+            {{ form.username(class="form-control forminput") }}
+            <br>
+            {% for error in form.username.errors %}
+                <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <br>
+            {{ form.email.label(class="form-label") }}
+            <br>
+            {{ form.email(class="form-control forminput") }}
+            {% for error in form.email.errors %}
+                <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <br>
+            {{ form.password.label(class="form-label") }}
+            <br>
+            {{ form.password(class="form-control forminput") }}
+            {% for error in form.password.errors %}
+                <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <br>
+            {{ form.confirm_password.label(class="form-label") }}
+            <br>
+            {{ form.confirm_password(class="form-control forminput") }}
+            {% for error in form.confirm_password.errors %}
+                <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <br>
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
 {% endblock %}
