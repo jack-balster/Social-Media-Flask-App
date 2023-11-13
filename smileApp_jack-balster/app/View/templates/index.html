@@ -8,7 +8,19 @@
 
     <!-- TODO: (milestone 2) Add the template to render an instance of a `sortForm`. The form should display the sort attribute select box and the "Refresh" submit button.
             Style the `sortorder` form element using the `formselect` CSS element we defined in milestone1 -->
+        <div class="sort-form">
+            <form method="post">
+                {{ sortform.hidden_tag() }}
+                <div class="form-group">
+                    {{ sortform.sort_by.label }}
+                    {{ sortform.sort_by(class="formselect") }}
+                    {{ sortform.display_my_posts_only(class="form-check-input") }}
+                    <label class="form-check-label">{{ sortform.display_my_posts_only.label }}</label>
+                    {{ sortform.refresh(class="button") }}
+                </div>
 
+            </form>
+        </div>
 
     <!--     TODO: (milestone 2) Format posts -->
     <div class="postlist">
