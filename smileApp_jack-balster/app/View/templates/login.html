@@ -3,8 +3,48 @@
 {% block content %}
     <h1>Sign In</h1>
     <!-- TODO: (milestone 3) Include the template for "login form" here...  -->
+    <form method="POST" action="{{ url_for('auth.login') }}">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.username.label(class="form-label") }}
+            <br>
+            {{ form.username(class="form-control forminput", placeholder="Username") }}
+            
+            {% for error in form.username.errors %}
+                <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <br>
+            {{ form.password.label(class="form-label") }}
+            <br>
+            {{ form.password(class="form-control forminput", placeholder="Password") }}
+            {% for error in form.password.errors %}
+                <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+            <br>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <br>
+                {{ form.remember_me(class="form-check-input") }}
+                
+                {{ form.remember_me.label(class="form-check-label") }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <br>
+            {{ form.submit(class="btn btn-primary") }}
+            
+        </div>
+    </form>
 
     <!-- TODO: (milestone 3) Add the URL for user register route. --> 
-    <p>New User? <a href="">Click to Register!</a></p>
+    <br>
+    
+    <p>New User? <a href="{{ url_for('auth.register') }}">Click to Register!</a></p>
 {% endblock %}
 
